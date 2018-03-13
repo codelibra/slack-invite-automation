@@ -5,6 +5,12 @@ const request = require('request');
 const config = require('../config');
 const { badge } = require('../lib/badge');
 
+
+router.get('/about', function(req, res) {
+    res.render('about');
+});
+
+
 router.get('/', function(req, res) {
   res.setLocale(config.locale);
   res.render('index', { community: config.community,
@@ -32,7 +38,7 @@ router.post('/invite', function(req, res) {
           if (body.ok) {
             res.render('result', {
               community: config.community,
-              message: 'Success! Check &ldquo;'+ req.body.email +'&rdquo; for an invite from Slack.'
+              message: 'Success! Check &ldquo;'+ req.body.email +'&rdquo; for an invite from Slack. You need to use a desktop computer to start your interview.'
             });
           } else {
             let error = body.error;
