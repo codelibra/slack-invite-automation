@@ -3,7 +3,6 @@ const router = express.Router();
 const request = require('request');
 
 const config = require('../config');
-const { badge } = require('../lib/badge');
 
 
 router.get('/about', function(req, res) {
@@ -11,12 +10,21 @@ router.get('/about', function(req, res) {
 });
 
 
-router.get('/', function(req, res) {
+router.get('/start-interview', function(req, res) {
   res.setLocale(config.locale);
   res.render('index', { community: config.community,
                         tokenRequired: !!config.inviteToken,
                         recaptchaSiteKey: config.recaptchaSiteKey });
 });
+
+
+
+router.get('/', function(req, res) {
+    res.setLocale(config.locale);
+    res.render('main');
+});
+
+
 
 router.post('/invite', function(req, res) {
   if (req.body.email && (!config.inviteToken || (!!config.inviteToken && req.body.token === config.inviteToken))) {
