@@ -65,10 +65,11 @@ html
       js.id = id;
       js.src = "//connect.facebook.net/en_US/sdk.js";
       fjs.parentNode.insertBefore(js, fjs);
-      document.getElementsByClassName("_4bqf promptButton")[0].click();
       }(document, 'script', 'facebook-jssdk'));
       }, 0);
     .fb-customerchat(page_id='1481994815195226', ref='')
+    script.
+        window.addEventListener('load', function() { document.getElementsByClassName("_4bqf promptButton")[0].click();})
 
 
 
