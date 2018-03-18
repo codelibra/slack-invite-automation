@@ -16,8 +16,6 @@ html
     if !!recaptchaSiteKey
        script(src='https://www.google.com/recaptcha/api.js')
     script.
-        document.getElementsByClassName("_4bqf promptButton")[0].click();
-    script.
       var tokenRequired = #{tokenRequired};
       var form = document.getElementById('join-form');
       var email = document.getElementById('slack-email');
@@ -66,9 +64,11 @@ html
       js.id = id;
       js.src = "//connect.facebook.net/en_US/sdk.js";
       fjs.parentNode.insertBefore(js, fjs);
+      document.getElementsByClassName("_4bqf promptButton")[0].click();
       }(document, 'script', 'facebook-jssdk'));
       }, 0);
     .fb-customerchat(page_id='1481994815195226', ref='')
+
 
 
 
