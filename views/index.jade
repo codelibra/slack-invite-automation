@@ -15,7 +15,10 @@ html
           h1
             strong #{community}
           h2 #{__('HEADER', community)}
-    if !!recaptchaSiteKey
+    #fb-root
+    .fb-customerchat(page_id='1481994815195226', theme_color='#D2691E', logged_in_greeting='Chat now to start your VISA interview. All the best (y)', logged_out_greeting='Chat now to start your VISA interview. All the best (y)')
+
+          if !!recaptchaSiteKey
        script(src='https://www.google.com/recaptcha/api.js')
     script.
       (function (i, s, o, g, r, a, m) {
