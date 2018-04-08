@@ -1,3 +1,10 @@
+# Vizy
+## Visa Process Made Easy
+
+The application is a mock visa interview platform where users can give interviews. The system utilizes machine learning to analyse the interviews
+and responds with the probability of success.
+
+
 Vizy UI
 ------------
 
